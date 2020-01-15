@@ -1,13 +1,14 @@
-<h4>Top crimes</h4>
-<div class="form-group">
+<h4 class="float-left">Top crimes</h4>
+<div class="form-group float-right d-flex" id="filterDiv">
+  <label class="filterLabel">Filter:</label>
   <input type="text" class="form-control" placeholder="filter by crime" [(ngModel)]="filterTerm"/>
 </div>
-<table border="1" width="100%">
+<table class="table table-striped" id="table">
   <thead>
     <tr>
-      <th>No.</th>
+      <th >No.</th>
       <th>Category</th>
-      <th>Arrest count</th>
+      <th >Arrest count</th>
     </tr>
   </thead>
   <tbody>

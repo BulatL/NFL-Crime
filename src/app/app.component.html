@@ -3,8 +3,11 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <div>
-    <label>Chose view: </label>
+</div>
+<div class="container">
+
+  <div id="choseViewDiv">
+    <label id="choseViewLabel">Chose view: </label>
     <select id="viewDropdown" (change)="dropdownChange($event)">
       <option value="0">Top Crimes</option>
       <option value="1">Top Players for Crime</option>
@@ -12,10 +15,13 @@
       <option value="3">Crime Timeline</option>
     </select>
     <ng-container *ngIf="show">
-      <label>Enter crime</label>
-      <input placeholder="crime" type="text" [(ngModel)]="crime"/>
+      
+      <label id="crimeLabel">Crime:</label>
+      <input placeholder="crime" type="text" class="form-control" [(ngModel)]="crime" id="crimeInput"/>
+   
     </ng-container>
-    <button (click)="changeView()">Change</button>
+    <button (click)="changeView()" id="changeViewBtn">Change</button>
   </div>
+
+  <router-outlet></router-outlet>
 </div>
-<router-outlet></router-outlet>

@@ -18,7 +18,13 @@ export class AppComponent {
   }
 
   ngOnInit(){
-    
+    let btn = document.getElementById("changeViewBtn");
+    btn.addEventListener("keyup", function(event) {
+      if (event.keyCode === 13) {
+      event.preventDefault();
+      document.getElementById("changeViewBtn").click();
+      }
+    });
   }
 
   dropdownChange(event){

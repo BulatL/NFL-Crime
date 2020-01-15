@@ -20,6 +20,7 @@ export class TopPlayersForCrimeComponent implements OnInit {
   }
 
   loadData(crime){
+    this.crime = crime;
     this.nfl_crime.getTopPlayersForCrime(crime).subscribe( res => {this.top_players = res})
   }
 }

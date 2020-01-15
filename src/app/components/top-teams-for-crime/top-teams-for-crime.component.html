@@ -1,8 +1,9 @@
-<h4>Top teams for crime: {{crime}}</h4>
-<div class="form-group">
-  <input type="text" class="form-control" placeholder="filter by team" [(ngModel)]="filterTerm"/>
+<h4 class="float-left">Top teams for crime: {{crime}}</h4>
+<div class="form-group float-right d-flex" id="filterDiv">
+  <label class="filterLabel">Filter:</label>
+  <input type="text" class="form-control" placeholder="filter by crime" [(ngModel)]="filterTerm"/>
 </div>
-<table border="1" width="100%">
+<table class="table table-striped" id="table">
   <thead>
     <tr>
       <th>No.</th>
