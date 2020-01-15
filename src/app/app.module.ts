@@ -9,6 +9,9 @@ import { TopPlayersForCrimeComponent } from './components/top-players-for-crime/
 import { TopTeamsForCrimeComponent } from './components/top-teams-for-crime/top-teams-for-crime.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NflCrimeService } from './services/nfl-crime.service';
+import { CrimeFilterPipe } from './components/top-crimes/crime-filter.pipe';
+import { PlayersFilterPipe } from './components/top-players-for-crime/players-filter.pipe';
+import { TeamsFilterPipe } from './components/top-teams-for-crime/teams-filter.pipe';
 
 
 @NgModule({
@@ -16,7 +19,10 @@ import { NflCrimeService } from './services/nfl-crime.service';
     AppComponent,
     TopCrimesComponent,
     TopPlayersForCrimeComponent,
-    TopTeamsForCrimeComponent
+    TopTeamsForCrimeComponent,
+    CrimeFilterPipe,
+    PlayersFilterPipe,
+    TeamsFilterPipe
   ],
   imports: [
     BrowserModule,

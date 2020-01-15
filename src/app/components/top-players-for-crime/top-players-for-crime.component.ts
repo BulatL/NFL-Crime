@@ -10,6 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class TopPlayersForCrimeComponent implements OnInit {
   top_players: TopPlayers[] = [];
+  filterTerm:string = "";
   @Input() crime = "";
 
   constructor(private nfl_crime: NflCrimeService, private route: ActivatedRoute) { }

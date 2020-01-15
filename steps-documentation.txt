@@ -1,3 +1,4 @@
 Step 1 - Created Angular 5 project.
 Step 2 - Created nfl-crime.service. Service have 3 methods. First one is getTopCrimes, method take no param and return list of top crimes. Second one is getTopPlayersForCrime, method take 1 param (crime) and return list of top players for passed crime. Last one is getTopTeamsForCrime, method take 1 param (crime) and return list of top teams for passed crime.
 Step 3 - Created components for Top Crimes, Top Players for Crime and Top Teams for Crime. 
+Step 4 - Created filters for Top Crimes coponent by crime, for Top Players for Crime component by player name and for Top Teams for Crime component by Team and Team_name

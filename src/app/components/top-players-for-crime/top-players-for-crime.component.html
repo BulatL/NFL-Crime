@@ -1,4 +1,7 @@
 <h4>Top players for crime: {{crime}}</h4>
+<div class="form-group">
+  <input type="text" class="form-control" placeholder="filter by player" [(ngModel)]="filterTerm"/>
+</div>
 <table border="1" width="100%">
   <thead>
     <tr>
@@ -8,7 +11,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let player of top_players; let i = index">
+    <tr *ngFor="let player of top_players| playersFilter:filterTerm; let i = index">
       <td>{{i+1}}</td>
       <td>{{player.Name}}</td>
       <td>{{player.arrest_count}}</td>

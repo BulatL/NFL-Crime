@@ -9,6 +9,7 @@ import { TopCrime } from '../../models/top-crime';
 })
 export class TopCrimesComponent implements OnInit {
   top_crimes: TopCrime[] = [];
+  filterTerm:string = "";
   @Input() showView:boolean = true;
 
   constructor(private nfl_crime: NflCrimeService) { }
