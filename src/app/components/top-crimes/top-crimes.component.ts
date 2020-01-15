@@ -15,7 +15,6 @@ export class TopCrimesComponent implements OnInit {
   constructor(private nfl_crime: NflCrimeService) { }
 
   ngOnInit() {
-    console.log("crimes");
     this.nfl_crime.getTopCrimes().subscribe( res => {this.top_crimes = res})
   }
 

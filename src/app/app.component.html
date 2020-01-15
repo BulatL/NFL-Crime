@@ -5,11 +5,11 @@
   </h1>
   <div>
     <label>Chose view: </label>
-    <select (change)="dropdownChange($event)" id="viewDropdown">
+    <select id="viewDropdown" (change)="dropdownChange($event)">
       <option value="0">Top Crimes</option>
       <option value="1">Top Players for Crime</option>
       <option value="2">Top Teams for Crime</option>
-      <!--<option *ngFor="let showView of viewsList" value="{{showView.key}}">{{showView.value}}</option>-->
+      <option value="3">Crime Timeline</option>
     </select>
     <ng-container *ngIf="show">
       <label>Enter crime</label>

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TopPlayers } from '../../models/top-players';
 import { NflCrimeService } from '../../services/nfl-crime.service';
 import { ActivatedRoute } from '@angular/router';
@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class TopPlayersForCrimeComponent implements OnInit {
   top_players: TopPlayers[] = [];
   filterTerm:string = "";
-  @Input() crime = "";
+  crime = "";
 
   constructor(private nfl_crime: NflCrimeService, private route: ActivatedRoute) { }
 

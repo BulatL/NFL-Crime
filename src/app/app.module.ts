@@ -12,6 +12,7 @@ import { NflCrimeService } from './services/nfl-crime.service';
 import { CrimeFilterPipe } from './components/top-crimes/crime-filter.pipe';
 import { PlayersFilterPipe } from './components/top-players-for-crime/players-filter.pipe';
 import { TeamsFilterPipe } from './components/top-teams-for-crime/teams-filter.pipe';
+import { CrimeTimelineComponent } from './components/crime-timeline/crime-timeline.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { TeamsFilterPipe } from './components/top-teams-for-crime/teams-filter.p
     TopTeamsForCrimeComponent,
     CrimeFilterPipe,
     PlayersFilterPipe,
-    TeamsFilterPipe
+    TeamsFilterPipe,
+    CrimeTimelineComponent
   ],
   imports: [
     BrowserModule,

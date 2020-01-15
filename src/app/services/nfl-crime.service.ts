@@ -17,7 +17,10 @@ constructor(private httpClient: HttpClient) { }
 
     }
     getTopTeamsForCrime(crime: string){
-        console.log(crime);
         return this.httpClient.get(`http://nflarrest.com/api/v1/crime/topTeams/${crime}`) as Observable<any>;
+    }
+
+    getCrimeTimeline(crime: string){
+        return this.httpClient.get(`http://nflarrest.com/api/v1/crime/timeline/${crime}`) as Observable<any>;
     }
 }
