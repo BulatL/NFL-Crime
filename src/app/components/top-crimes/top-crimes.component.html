@@ -1,0 +1,17 @@
+<h4>Top crimes</h4>
+<table border="1" width="100%">
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>Category</th>
+      <th>Arrest count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let crime of top_crimes; let i = index">
+      <td>{{i+1}}</td>
+      <td>{{crime.Category}}</td>
+      <td>{{crime.arrest_count}}</td>
+    </tr>
+  </tbody>
+</table>

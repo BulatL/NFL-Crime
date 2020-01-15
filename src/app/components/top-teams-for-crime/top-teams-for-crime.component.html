@@ -1,0 +1,21 @@
+<h4>Top teams for crime: {{crime}}</h4>
+<table border="1" width="100%">
+  <thead>
+    <tr>
+      <th>No.</th>
+      <th>Team</th>
+      <th>Team_name</th>
+      <th>Team_city</th>
+      <th>Arrest count</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let team of top_teams; let i = index">
+      <td>{{i+1}}</td>
+      <td>{{team.Team}}</td>
+      <td>{{team.Team_name}}</td>
+      <td>{{team.Team_city}}</td>
+      <td>{{team.arrest_count}}</td>
+    </tr>
+  </tbody>
+</table>
