@@ -21,46 +21,47 @@ export class CrimeTimelineComponent implements OnInit {
   }
 
   loadData(crime){
-    this.nfl_crime.getCrimeTimeline(crime).subscribe( res => {this.crime_timeline = res, console.log(this.crime_timeline)})
-    let months = this.crime_timeline.map( res=> res.Month);
-    let years = this.crime_timeline.map( res=> res.Year);
-    let arrest_counts = this.crime_timeline.map( res=> res.arrest_count);
-    this.chart = new Chart('canvas', {
-      type: 'line',
-      data: {
-        labels: "year",
-        datasets: [
-          { 
-            data: months,
-            borderColor: "#3cba9f",
-            fill: false
-          },
-          { 
-            data: years,
-            borderColor: "#ffcc00",
-            fill: false
-          },
-          { 
-            data: arrest_counts,
-            borderColor: "#ffcc00",
-            fill: false
-          },
-        ]
-      },
-      options: {
-        legend: {
-          display: false
-        },
-        scales: {
-          xAxes: [{
-            display: true
-          }],
-          yAxes: [{
-            display: true
-          }],
-        }
-      }
-    });
-  }
+    this.crime = crime;
+    this.nfl_crime.getCrimeTimeline(this.crime).subscribe( res => 
+      { 
+        let years = res.map( res => res.Year)
+        let months = res.map( res => res.Month)
+        let arrest_counts = res.map( res => res.arrest_count)
 
+        let crime_timelines_dates = []
+        for (let i = 0; i < years.length; i++) {
+          let date = new Date(years[i], months[i]);
+          crime_timelines_dates.push(date.toLocaleDateString('srb', { year: 'numeric', month: 'short'}));
+          
+        }
+
+        this.chart = new Chart('canvas', {
+          type: 'line',
+          data: {
+            labels: crime_timelines_dates,
+            datasets: [
+              {
+                label: "arrest count",
+                data: arrest_counts,
+                borderColor: '#3cba9f',
+                fill: false
+              }
+            ]
+          },
+          options: {
+            legend: {
+              display: true
+            },
+            scales: {
+              xAxes: [{
+                display: true
+              }],
+              yAxes: [{
+                display: true
+              }]
+            }
+          }
+        })
+      });
+  }
 }
